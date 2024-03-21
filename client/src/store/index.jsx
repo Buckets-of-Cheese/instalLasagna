@@ -1,4 +1,3 @@
-
 /* 
     STORE PROVIDER
 
@@ -6,10 +5,9 @@
     - provides state and setState to children
 */
 
-
 import { useContext, createContext, useState, useEffect } from "react";
 import { useQuery } from '@apollo/client';
-import { AUTHENTICATE } from "../graphql/queries/userQueries";
+import { AUTHENTICATE } from "../graphql/queries";
 
 const Context = createContext();
 
@@ -18,7 +16,8 @@ export function StoreProvider({ children }) {
     const { data: userData } = useQuery(AUTHENTICATE);
     
     const initialState = {
-        user: null,
+        // user: null,
+        user:{username:'cjswayne' },
         loading: true
     };
 
@@ -32,6 +31,13 @@ export function StoreProvider({ children }) {
             }));
         }
     }, [userData]);
+
+    useEffect(() => {
+            setState(prevState => ({
+                ...prevState,
+                loading: false
+            }));
+    }, []);
 
     return (
         <Context.Provider value={{ state, setState }}>
