@@ -40,12 +40,13 @@
     min-width: 320px;
     min-height: 100vh;
   }
-  main, header, footer{
+  header, footer{
     width:100%;
   }
 
   main {
     flex: 1;
+    margin:auto;
   }
 
   header {

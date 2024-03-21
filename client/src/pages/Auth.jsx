@@ -66,7 +66,7 @@ export default function Auth() {
     };
 
     return (
- <div className="authform justify-center w-100">
+ <div className="authform justify-center ba pa3 br4 bw1">
             {message && <p>{message}</p>}
             <div className="flex flex-column tl">
                 {formData.isLogin ? (
