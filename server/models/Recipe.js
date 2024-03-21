@@ -7,9 +7,10 @@ const recipeSchema = new Schema(
             required: true
         },
         description: { type: String },
+        // in the future, add an environment model so people can store custom environments
         environment: {
             type: String,
-            enum: ['Mac OS','Windows','Linux','iOS', 'Android', 'Other'],
+            enum: ['Mac OS','Windows','Linux','iOS', 'Android', 'Custom','Other'],
             default: 'Other'
         },
         creatorID: {
