@@ -6,6 +6,8 @@ import logo from '../assets/lasagna-logo.png'
 
 export default function Header() {
     const { state, setState } = useStore()
+    const navigate = useNavigate()
+
     // const [logoutUser] = useMutation(LOGOUT_USER)
 
     const handleLogout = async () => {
@@ -31,7 +33,7 @@ export default function Header() {
                     <img src={logo} alt="" />
                 </div>
                 <div className="flex flex-column items-start">
-                    <h1 className="pb0 mv0">
+                    <h1 className="pb0 mv0 f2">
                         InstalLasagna
                     </h1>
                     {state.user?.username && <p className="pt0 mt0 ml3">Welcome back, {state.user?.username}</p>}

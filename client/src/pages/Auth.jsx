@@ -66,52 +66,55 @@ export default function Auth() {
     };
 
     return (
- <div className="authform justify-center ba pa3 br4 bw1">
-            {message && <p>{message}</p>}
-            <div className="flex flex-column tl">
-                {formData.isLogin ? (
-                    <>
-                        <h1 className="bb pb3 ma0">Log In</h1>
-                        <p className="ma0 pb3 p f5 pointer">Not a User? <span onClick={() => setFormData({ ...formData, errorMessages: [], isLogin: false })} className="underline-hover">Sign Up</span></p>
-                    </>
-                ) : (
-                    <>
-                        <h1 className="bb pb3 ma0">Sign Up</h1>
-                        <p className="ma0 pb3 pt1 f5 pointer">Already a User? <span onClick={() => setFormData({ ...formData, errorMessages: [], isLogin: true })} className="underline-hover">Log In</span></p>
-                    </>
-                )}
-            </div>
+        <div className="authform-wrapper flex flex-column justify-end items-end">
+            <span className='tab'>Login | SignUp</span>
+            <div className="authform justify-center pa3">
+                {message && <p>{message}</p>}
+                <div className="flex flex-column tl user-authentication-header">
+                    {formData.isLogin ? (
+                        <>
+                            <h2 className="">Log In</h2>
+                            <p className="ma0 pb3 p f6 pointer">Not a User? <span onClick={() => setFormData({ ...formData, errorMessages: [], isLogin: false })} className="underline-hover">Sign Up</span></p>
+                        </>
+                    ) : (
+                        <>
+                            <h2 className="">Sign Up</h2>
+                            <p className="ma0 pb3 pt1 f6 pointer">Already a User? <span onClick={() => setFormData({ ...formData, errorMessages: [], isLogin: true })} className="underline-hover">Log In</span></p>
+                        </>
+                    )}
+                </div>
 
-            <form onSubmit={handleSubmit} className="flex flex-column items-end">
-                {formData.errorMessages.length > 0 && (
-                    <div className="error-container">
-                        {formData.errorMessages.map((error, index) => (
-                            <p key={index} className="error text-center">{error}</p>
-                        ))}
-                    </div>
-                )}
-                {!formData.isLogin && (
+                <form onSubmit={handleSubmit} className="flex flex-column items-end">
+                    {formData.errorMessages.length > 0 && (
+                        <div className="error-container">
+                            {formData.errorMessages.map((error, index) => (
+                                <p key={index} className="error text-center">{error}</p>
+                            ))}
+                        </div>
+                    )}
+                    {!formData.isLogin && (
+                        <input
+                            name="username"
+                            value={formData.username}
+                            onChange={handleInputChange}
+                            type="text"
+                            placeholder="Username" />
+                    )}
                     <input
-                        name="username"
-                        value={formData.username}
+                        name="email"
+                        value={formData.email}
                         onChange={handleInputChange}
-                        type="text"
-                        placeholder="Enter your username" />
-                )}
-                <input
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    type="email"
-                    placeholder="Enter your email address" />
-                <input
-                    name="password"
-                    value={formData.password}
-                    onChange={handleInputChange}
-                    type="password"
-                    placeholder="Enter your password" />
-                <button className="btn">{formData.isLogin ? 'Continue' : 'Start MyMooJournal Journey'}</button>
-            </form>
+                        type="email"
+                        placeholder="Email" />
+                    <input
+                        name="password"
+                        value={formData.password}
+                        onChange={handleInputChange}
+                        type="password"
+                        placeholder="Password" />
+                    <button className="btn">Continue</button>
+                </form>
+            </div>
         </div>
     )
 }
