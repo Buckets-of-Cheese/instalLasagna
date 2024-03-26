@@ -9,9 +9,10 @@ const stepSchema = new Schema(
         content: {
             type: String
         },
-        notes: {
-            type: Number
-        },
+        notes: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Note'
+        }],
         recipeId: {
             type: Schema.Types.ObjectId,
             ref: 'Recipe'

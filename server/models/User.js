@@ -28,7 +28,8 @@ const userSchema = new Schema(
             validate: {
                 validator(val) {
                     return /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/g.test(val)
-                }
+                },
+                message: "Your password must countain an uppercase letter, lowercase letter, a number and a special character (@$!%*#?&)"
             }
         },
         recipes: [{
