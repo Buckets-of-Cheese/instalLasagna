@@ -6,7 +6,8 @@
   "scripts": {
     "seed": "node ./seeds/seeds.js",
     "start": "node ./seeds/seedSystemUser.js && node server.js",
-    "dev": "node ./seeds/seedSystemUser.js && nodemon server.js"
+    "dev": "concurrently \"cd ./client && npm run dev\" \"cd ./server && npm run dev\"",
+    "install":"concurrently \"cd ./client && npm i\" \"cd ./server && npm i\""
   },
   "keywords": [],
   "author": "",

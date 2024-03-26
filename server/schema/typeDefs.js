@@ -36,7 +36,6 @@ const typeDefs = gql`
         registerUser(username: String!, email: String!, password: String!): User
         loginUser(email: String!, password: String!): User
         logoutUser: Success
-
     }
 `;
 

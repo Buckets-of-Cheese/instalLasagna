@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useStore } from '../store';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
-// import { REGISTER_USER, LOGIN_USER } from '../graphql/queries';
+import { REGISTER_USER, LOGIN_USER } from '../graphql/mutations';
 
 
 export default function Auth() {
@@ -17,7 +17,7 @@ export default function Auth() {
         isLogin: true
     });
 
-    // const [authenticateUser] = useMutation(formData.isLogin ? LOGIN_USER : REGISTER_USER);
+    const [authenticateUser] = useMutation(formData.isLogin ? LOGIN_USER : REGISTER_USER);
 
     const location = useLocation();
     const message = location.state && location.state.message;
@@ -25,38 +25,42 @@ export default function Auth() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // try {
-        //     const resolverName = formData.isLogin ? 'loginUser' : 'registerUser';
+        try {
+            const resolverName = formData.isLogin ? 'loginUser' : 'registerUser';
 
-        //     const { data: userData } = await authenticateUser({
-        //         variables: {
-        //             username: formData.username,
-        //             email: formData.email,
-        //             password: formData.password
-        //         }
-        //     });
+            const { data: userData } = await authenticateUser({
+                variables: {
+                    username: formData.username,
+                    email: formData.email,
+                    password: formData.password
+                }
+            });
 
-        //     setState({
-        //         ...state,
-        //         user: userData[resolverName]
-        //     });
+            setState({
+                ...state,
+                user: userData[resolverName]
+            });
 
-        //     setFormData({
-        //         ...formData,
-        //         username: '',
-        //         email: '',
-        //         password: '',
-        //         errorMessages: []
-        //     });
+            setFormData({
+                ...formData,
+                username: '',
+                email: '',
+                password: '',
+                errorMessages: []
+            });
 
-        //     navigate('/');
-        // } catch (err) {
-        //     setFormData({
-        //         ...formData,
-        //         errorMessages: err.message.split(',')
-        //     });
-        // }
+            navigate('/');
+        } catch (err) {
+            setFormData({
+                ...formData,
+                errorMessages: err.message.split(',')
+            });
+        }
     };
+
+    useEffect(() => {
+        console.log(formData)
+    }, [formData])
 
     const handleInputChange = (e) => {
         setFormData({

@@ -1,11 +1,12 @@
-import {gql} from '@apollo/client'
+import { gql } from '@apollo/client'
 
 export const AUTHENTICATE = gql`
     query {
         authenticate {
-            _id
-            username
-        }
+    _id
+    email
+    username
+  }
     }
 `
 

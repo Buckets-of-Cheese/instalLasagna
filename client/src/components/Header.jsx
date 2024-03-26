@@ -26,8 +26,7 @@ export default function Header() {
     }
 
     return (
-        <header className="flex items-center ph3 pv2 justify-between">
-            {/* <div className="flex items-center"> */}
+        <header className="flex flex-wrap items-center ph3 pv2 justify-between">
             <span className="flex items-center">
                 <div className="logo-wrapper">
                     <img src={logo} alt="" />
