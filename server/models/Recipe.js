@@ -19,7 +19,7 @@ const recipeSchema = new Schema(
         },
         steps: [{
             type: Schema.Types.ObjectId,
-            ref: 'Steps'
+            ref: 'Step'
         }],
         private: {
             type: Boolean,
