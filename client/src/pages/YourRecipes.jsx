@@ -1,3 +1,5 @@
+import { RecipeCard } from "../components"
+
 export default function YourRecipes() {
 
     return (

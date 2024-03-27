@@ -16,7 +16,7 @@ function Protect({ children }) {
                 }
 
                 if (state.user && location.pathname === '/auth') {
-                    navigate('/my_journal');
+                    navigate('/');
                 }
             }
         }

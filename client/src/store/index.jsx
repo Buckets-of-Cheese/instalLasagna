@@ -16,8 +16,8 @@ export function StoreProvider({ children }) {
     const { data: userData } = useQuery(AUTHENTICATE);
     
     const initialState = {
-        user: null,
-        // user:{username:'cjswayne' },
+        // user: null,
+        user:{username:'cjswayne' },
         loading: true
     };
 
@@ -38,9 +38,8 @@ export function StoreProvider({ children }) {
                 loading: false
             }));
     }, []);
-    useEffect(() => {
-        console.log(userData) 
-    }, [userData]);
+
+
     return (
         <Context.Provider value={{ state, setState }}>
             {children}
