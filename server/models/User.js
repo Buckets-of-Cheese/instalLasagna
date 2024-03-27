@@ -44,7 +44,8 @@ const userSchema = new Schema(
 )
 
 userSchema.methods.validatePass = async function(formPass) {
-    const validPass = await compare(formPass, this.Password)
+    console.log(formPass, this.password)
+    const validPass = await compare(formPass, this.password)
 
     return validPass
 }
