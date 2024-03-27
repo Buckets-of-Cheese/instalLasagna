@@ -2,17 +2,18 @@ import { NavLink, useNavigate, useLocation } from 'react-router-dom'
 import { useMutation } from '@apollo/client'
 
 import { useStore } from '../store'
+import { LOGOUT_USER } from '../graphql/mutations'
 import logo from '../assets/lasagna-logo.png'
 
 export default function Header() {
     const { state, setState } = useStore()
     const navigate = useNavigate()
 
-    // const [logoutUser] = useMutation(LOGOUT_USER)
+    const [logoutUser] = useMutation(LOGOUT_USER)
 
     const handleLogout = async () => {
         try {
-            //  await logoutUser()
+             await logoutUser()
         } catch (error) {
             console.log(error)
         }
@@ -29,7 +30,7 @@ export default function Header() {
         <header className="flex flex-wrap items-center ph3 pv2 justify-between">
             <span className="flex items-center">
                 <div className="logo-wrapper">
-                    <img src={logo} alt="" />
+                    {/* <img src={logo} alt="" /> */}
                 </div>
                 <div className="flex flex-column items-start">
                     <h1 className="pb0 mv0 f2">

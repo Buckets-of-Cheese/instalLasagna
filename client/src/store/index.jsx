@@ -38,7 +38,9 @@ export function StoreProvider({ children }) {
                 loading: false
             }));
     }, []);
-
+    useEffect(() => {
+        console.log(userData) 
+    }, [userData]);
     return (
         <Context.Provider value={{ state, setState }}>
             {children}
