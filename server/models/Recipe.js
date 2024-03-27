@@ -24,7 +24,10 @@ const recipeSchema = new Schema(
         private: {
             type: Boolean,
             default: false
-        }
+        },
+        tags: [{
+            type: String
+        }]
     }
 )
 
