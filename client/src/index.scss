@@ -1,0 +1,176 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: black;
+    background-color: white;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  
+  a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+  }
+  a:hover {
+    color: #535bf2;
+  }
+  input{
+    font-size:16px;
+  }
+  
+  body, #root {
+    margin: 0;
+    padding:0;
+    width:100%;
+    display: flex;
+    flex-direction:column;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    overflow: clip;
+  }
+  header, footer{
+    width:100%;
+    max-height:125px;
+  }
+
+  main {
+    // flex: 1;
+    margin:auto;
+  }
+
+  header {
+    // max-height:200px;
+  }
+
+  .logo-wrapper{
+    img{
+      width:70px;
+    }
+  }
+
+
+  // Buttons
+  .btn, button{
+    padding:5px 20px;
+    background:black;
+    border: 1px solid transparent;
+
+    border-radius:8px;
+    color:white;
+    border:solid 4px black;
+    cursor:pointer;
+    font-size:.8rem;
+    cursor: pointer;    
+    transition: border-color 0.25s;
+    font-weight: 500;
+    outline:none;
+    
+
+  }
+
+  .btn:hover, button:hover{
+    background:white;
+    color:black;
+  }
+
+
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+  }
+
+  // button:focus,
+  // button:focus-visible {
+  //   outline: 4px auto -webkit-focus-ring-color;
+  // }
+
+
+  // Auth Form 
+
+  .authform-wrapper{
+
+    .tab{
+      border:2px solid black;
+      border-bottom:none;
+      position:relative;
+      border-radius:10px 10px 0 0;
+      // box-shadow: 10px 0px 10px -1px #527F70;
+
+      padding:5px;
+    }
+    .tab::after{
+      content:'';
+      position:absolute;
+      background:white;
+      left:0;
+      right:0;
+      bottom:-2px;
+      height:2px;
+    }
+
+    .authform{
+
+      margin:auto;
+      min-width:400px;
+      box-shadow: 10px 10px 10px -1px #527F70;
+      border-radius: 10px 0 10px 10px;
+      border:2px solid black;
+  
+      .user-authentication-header{
+        h2{
+         margin:0;
+         padding:0;
+  
+        }
+      }
+      form{
+        // padding:0px 10px 10px;
+        width:100%;
+      }
+  
+      input{
+        width:100%;
+  
+        outline:none;
+        background:none;
+        border-bottom:1px solid gray;
+        margin-bottom:10px;
+        color:black;
+      }
+    }
+  }
+  
+  
+  @media (prefers-color-scheme: light) {
+    :root {
+      color: #213547;
+      background-color: #ffffff;
+    }
+    a:hover {
+      color: #747bff;
+    }
+    button {
+      background-color: #f9f9f9;
+    }
+  }
+  
+
+  @media(max-width:480px){
+    
+  }
