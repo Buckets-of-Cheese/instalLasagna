@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { EditRecipe, ViewRecipe, YourRecipes, LandingPage, Auth, Search, NotFound } from './pages';
-import { Protect, Header, Footer } from './components';
+import { Protect, Header, Footer, HamburgerMenu } from './components';
 import { useStore } from './store'
 import './App.css'
 
@@ -18,9 +18,9 @@ function App() {
           <>
 
             <Header />
+            {/* <HamburgerMenu/> */}
             
             <main>
-
               <Routes>
 
                 <Route path="/" element={<LandingPage />} />

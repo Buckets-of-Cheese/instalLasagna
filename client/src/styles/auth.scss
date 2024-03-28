@@ -1,0 +1,55 @@
+ // Auth Form 
+
+ .authform-wrapper{
+
+    .tab{
+      border:2px solid black;
+      border-bottom:none;
+      position:relative;
+      border-radius:10px 10px 0 0;
+      // box-shadow: 10px 0px 10px -1px #527F70;
+
+      padding:5px;
+    }
+    .tab::after{
+      content:'';
+      position:absolute;
+      background:white;
+      left:0;
+      right:0;
+      bottom:-2px;
+      height:2px;
+    }
+
+    .authform{
+
+      margin:auto;
+      min-width:400px;
+      box-shadow: 10px 10px 10px -1px #527F70;
+      border-radius: 10px 0 10px 10px;
+      border:2px solid black;
+  
+      .user-authentication-header{
+        h2{
+         margin:0;
+         padding:0;
+  
+        }
+      }
+      form{
+        // padding:0px 10px 10px;
+        width:100%;
+      }
+  
+      input{
+        width:100%;
+  
+        outline:none;
+        background:none;
+        border-bottom:1px solid gray;
+        // margin-bottom:10px;
+        color:black;
+      }
+    }
+  }
+  

@@ -16,8 +16,8 @@ export function StoreProvider({ children }) {
     const { data: userData } = useQuery(AUTHENTICATE);
     
     const initialState = {
-        // user: null,
-        user:{username:'cjswayne' },
+        user: null,
+        // user:{username:'cjswayne' },
         loading: true
     };
 
